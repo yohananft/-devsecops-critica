@@ -59,7 +59,6 @@
             z-index: 1;
         }
 
-        /* Navigation */
         .main-nav {
             display: flex;
             justify-content: center;
@@ -89,7 +88,6 @@
             border-color: rgba(168, 218, 220, 0.5);
         }
 
-        /* Header Styles */
         .main-header {
             text-align: center;
             padding: 40px 0;
@@ -148,7 +146,6 @@
             transform: translateY(-2px);
         }
 
-        /* Content Sections */
         .content-section {
             background: rgba(42, 42, 42, 0.7);
             backdrop-filter: blur(10px);
@@ -203,7 +200,6 @@
             border-radius: 0 8px 8px 0;
         }
 
-        /* Article Cards */
         .articles-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -284,7 +280,6 @@
             line-height: 1.6;
         }
 
-        /* Author Section */
         .author-section {
             display: flex;
             gap: 30px;
@@ -349,7 +344,6 @@
             line-height: 1.6;
         }
 
-        /* Critique Section */
         .critique-points {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -395,7 +389,6 @@
             margin-bottom: 10px;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -456,7 +449,6 @@
             }
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -496,7 +488,9 @@
                 <div class="student-badge">🔐 Seguridad</div>
                 <div class="student-badge">⚙️ Operaciones</div>
             </div>
-            <p class="subtitle">IF-6100 Análisis y Diseño de Sistemas</p>
+            <div>
+                <p class="subtitle">IF-6100 Análisis y Diseño de Sistemas</p>
+            </div>
         </header>
 
         <!-- Navigation Buttons -->
@@ -508,9 +502,9 @@
 
         <!-- Sección Artículos -->
         <section id="articulos" class="content-section fade-in">
-            <h2 class="section-title">Análisis de Artículos</h2>
+            <h2 class="section-title">Investigación de Artículos</h2>
             <div class="section-content">
-                <p>Este trabajo consiste en analizar y evaluar críticamente dos artículos académicos relacionados con DevSecOps, seleccionados de fuentes reconocidas como IEEE Xplore y ACM.</p>
+                <p>A continuación se mostrarán los artículos seleccionados para esta investigación.</p>
                 
                 <div class="highlight">
                     <p><strong>Resumen:</strong> El análisis cubre tipo de publicación, autores, objetivos, metodología, contribuciones, tecnologías y resultados de cada artículo, proporcionando una perspectiva integral sobre el estado actual de DevSecOps en la literatura académica.</p>
@@ -530,8 +524,15 @@
                     
                     <div class="article-content">
                         <div class="article-section">
-                            <h4>Descripción Objetiva</h4>
-                            <p>Conferencia IEEE. Objetivo: mapear hallazgos en literatura gris sobre DevSecOps. Metodología: revisión exploratoria de fuentes no académicas.</p>
+                            <h3>Resumen</h3>
+                            <p>
+                                El artículo analiza cómo surge DevSecOps como una evolución natural del DevOps, 
+                                debido a la necesidad de integrar la seguridad dentro del ciclo continuo de desarrollo y operaciones. 
+                                Aunque DevOps prioriza la entrega rápida y continua de software, esto 
+                                puede causar vulnerabilidades si la seguridad se maneja únicamente al final del proceso. 
+                                Por esa razón, DevSecOps propone que la seguridad esté incorporada desde el inicio y en 
+                                todas las etapas del ciclo de vida del software.
+                            </p>
                         </div>
                         
                         <div class="article-section">
