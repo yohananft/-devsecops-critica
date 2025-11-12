@@ -256,7 +256,6 @@
             </div>
         </section>
 
-        <!-- Sección Sobre el Autor -->
         <section id="autor" class="content-section fade-in">
             <h2 class="section-title">Sobre mi</h2>
             
@@ -279,8 +278,8 @@
                         <div class="detail-card">
                             <h4>🔐🥋🎧 Intereses</h4>
                             <p>
-                                En la carrera me gusta la parte de programación pura. 
-                                <br>Fuera de la Universidad, me gusta escuchar música y me apasiona el karate.
+                                En la carrera me gusta la parte de programación y creación de aplicaciones y juegos. 
+                                <br>Fuera de la Universidad, me gusta escuchar música, ver series y me apasiona el karate.
                             </p>
                         </div>
                     </div>
@@ -289,13 +288,13 @@
         </section>
 
         <footer class="main-footer">
-            <h5 class="subtitle">©Yohana 2025 - DevSecOps</h5>
+            <h5 class="subtitle">©Yohana Hidalgo Oviedo 2025 - DevSecOps</h5>
             <h5 class="subtitle">Universidad de Costa Rica | IF6100 - Análisis y Diseño de Sistemas</h5>
         </footer>
     </div>
 
     <script>
-        // Efecto de aparición gradual al hacer scroll
+        
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-in');
             
@@ -311,7 +310,6 @@
                 });
             };
             
-            // Establecer estado inicial
             fadeElements.forEach(element => {
                 element.style.opacity = "0";
                 element.style.transform = "translateY(20px)";
@@ -321,7 +319,6 @@
             window.addEventListener('scroll', fadeInOnScroll);
             fadeInOnScroll();
             
-            // Smooth scroll para los botones de navegación
             document.querySelectorAll('.nav-btn').forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
