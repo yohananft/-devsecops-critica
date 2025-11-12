@@ -51,10 +51,10 @@ body::before {
     z-index: 1;
 }
 
-/* Header optimizado para móviles */
+
 .main-header {
     text-align: center;
-    padding: 25px 0;
+    padding: 45px 0;
     margin-bottom: 15px;
     position: relative;
 }
