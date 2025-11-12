@@ -1,491 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevSecOps</title>
-     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/yohananft/-devsecops-critica/main/devsecops.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #16213e 100%);
-            color: #e8e8e8;
-            line-height: 1.7;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(150, 220, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(168, 218, 220, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(244, 162, 97, 0.05) 0%, transparent 50%);
-            z-index: -1;
-        }
-
-        .cyber-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(168, 218, 220, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(168, 218, 220, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -1;
-            opacity: 0.15;
-        }
-
-        .container {
-            width: 85%;
-            margin: 0 auto;
-            padding: 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .main-nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .nav-btn {
-            background: rgba(42, 42, 62, 0.8);
-            color: #a8dadc;
-            border: 1px solid rgba(168, 218, 220, 0.3);
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-btn:hover {
-            background: rgba(168, 218, 220, 0.1);
-            transform: translateY(-3px);
-            border-color: rgba(168, 218, 220, 0.5);
-        }
-
-        .main-header {
-            text-align: center;
-            padding: 40px 0;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .main-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #a8dadc, transparent);
-        }
-
-        .main-title {
-            font-size: 3.2em;
-            background: linear-gradient(135deg, #a8dadc, #f4a261);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .subtitle {
-            font-size: 1.4em;
-            color: #a8dadc;
-            margin-bottom: 10px;
-        }
-
-        .student-info {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .student-badge {
-            background: rgba(168, 218, 220, 0.1);
-            border: 1px solid rgba(168, 218, 220, 0.3);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 0.95em;
-            transition: all 0.3s ease;
-            color: #a8dadc;
-        }
-
-        .student-badge:hover {
-            background: rgba(168, 218, 220, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .content-section {
-            background: rgba(42, 42, 42, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 10px;
-            border: 1px solid rgba(168, 218, 220, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            scroll-margin-top: 20px;
-        }
-
-        .content-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        .section-title {
-            color: #a8dadc;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(168, 218, 220, 0.3);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, #a8dadc, transparent);
-        }
-
-        .section-content {
-            color: #e8e8e8;
-            font-size: 1.05em;
-            line-height: 1.8;
-        }
-
-        .section-content p {
-            margin-bottom: 15px;
-        }
-
-        .highlight {
-            background: rgba(244, 162, 97, 0.1);
-            border-left: 4px solid #f4a261;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .articles-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .article-card {
-            background: rgba(30, 30, 46, 0.8);
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid rgba(168, 218, 220, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #a8dadc, #f4a261);
-        }
-
-        .article-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
-            border-color: rgba(168, 218, 220, 0.4);
-        }
-
-        .article-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .article-title {
-            color: #a8dadc;
-            font-size: 1.4em;
-            margin-bottom: 5px;
-        }
-
-        .article-meta {
-            color: #f4a261;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .article-doi {
-            background: rgba(244, 162, 97, 0.1);
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            color: #f4a261;
-        }
-
-        .article-content {
-            margin-top: 15px;
-        }
-
-        .article-section {
-            margin-bottom: 20px;
-        }
-
-        .article-section h4 {
-            color: #a8dadc;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-
-        .article-section p {
-            color: #e8e8e8;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .author-section {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-            margin-top: 20px;
-        }
-
-        .author-photo {
-            flex-shrink: 0;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 4px solid rgba(168, 218, 220, 0.4);
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(135deg, #a8dadc, #f4a261);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4em;
-            color: white;
-        }
-
-        .author-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .author-info {
-            flex: 1;
-        }
-
-        .author-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .detail-card {
-            background: rgba(168, 218, 220, 0.08);
-            border: 1px solid rgba(168, 218, 220, 0.2);
-            border-radius: 10px;
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .detail-card:hover {
-            background: rgba(168, 218, 220, 0.12);
-            transform: translateY(-5px);
-        }
-
-        .detail-card h4 {
-            color: #a8dadc;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .detail-card p {
-            color: #e8e8e8;
-            line-height: 1.6;
-        }
-
-        .critique-points {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .critique-card {
-            background: rgba(30, 30, 46, 0.8);
-            border-radius: 10px;
-            padding: 20px;
-            border-left: 4px solid #a8dadc;
-            transition: all 0.3s ease;
-        }
-
-        .critique-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .critique-card h4 {
-            color: #a8dadc;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .critique-card p {
-            color: #e8e8e8;
-            line-height: 1.6;
-        }
-        .img_articulo {
-            display: block;        
-            margin-left: auto;    
-            margin-right: auto;    
-            max-width: 100%;       
-            height: auto;          
-        }
-
-         p {
-            text-align: justify;
-        }
-
-        .main-footer {
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
-            border-top: 1px solid rgba(168, 218, 220, 0.2);
-            color: #888;
-            font-size: 0.9em;
-        }
-
-        .footer-text {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
-            .main-title {
-                font-size: 2.5em;
-            }
-            
-            .articles-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .article-card {
-                padding: 20px;
-            }
-            
-            .student-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .author-section {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .author-photo {
-                width: 150px;
-                height: 150px;
-                font-size: 3em;
-            }
-            
-            .nav-btn {
-                padding: 12px 20px;
-                font-size: 1em;
-                width: 100%;
-                max-width: 250px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-title {
-                font-size: 2em;
-            }
-            
-            .content-section {
-                padding: 20px;
-            }
-            
-            .section-title {
-                font-size: 1.5em;
-            }
-            
-            .author-details {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1a1a2e;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #a8dadc, #f4a261);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #8ac6c8, #e3945e);
-        }
-    </style>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/yohananft/-devsecops-critica/main/devsecops.png">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/yohananft/-devsecops-critica/main/styles.css">
 </head>
 <body>
     <div class="cyber-grid"></div>
@@ -522,7 +42,7 @@
                 <div class="article-card">
                     <div class="article-header">
                         <div>
-                            <h3 class="article-title">“Preliminary Findings about DevSecOps from Grey Literature”</h3>
+                            <h3 class="article-title">"Preliminary Findings about DevSecOps from Grey Literature"</h3>
                             <p class="article-meta">Mao et al. (2020)</p>
                         </div>
                     </div>
@@ -539,7 +59,7 @@
                                 todas las etapas del ciclo de vida del software.
                                 <br>
                             </p>
-                            <br><img class = "img_articulo "src="https://raw.githubusercontent.com//yohananft/-devsecops-critica/main/articulo1_1.jpg" alt="Ciclo de vida">
+                            <br><img class="img_articulo" src="https://raw.githubusercontent.com//yohananft/-devsecops-critica/main/articulo1_1.jpg" alt="Ciclo de vida">
                             <p>
                                 <br>
                                 Los autores realizaron una Revisión de Literatura Gris (Grey Literature Review), lo cual significa que se 
@@ -555,7 +75,7 @@
                                 <br>
                                 <br>1. Sacrificar seguridad por velocidad: Se prioriza desplegar rápido antes que asegurar.
                                 <br>
-                                <br>2. La seguridad se ve como algo “al final”: Se revisa solo al terminar, cuando ya es tarde.
+                                <br>2. La seguridad se ve como algo "al final": Se revisa solo al terminar, cuando ya es tarde.
                                 <br>
                                 <br>3. Riesgos del entorno técnico: Uso de contenedores, nube, microservicios, etc., aumenta la superficie de ataque.
                                 <br><br>
@@ -570,31 +90,33 @@
                                 Sus interpretaciones se agrupan en tres aspectos clave:
                             </p>
                             
-                            <div id="devsecops" class="devsecops-container" style="max-width:900px;margin:0 auto;padding:12px;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;">
-                                  <table role="table" aria-label="Cómo entiende la industria DevSecOps" style="width:100%;border-collapse:collapse;">
-                                    <caption style="text-align:left;font-weight:600;margin-bottom:8px;">Cómo entiende la industria el DevSecOps</caption>
+                            <div class="devsecops-table">
+                                <table>
+                                    <caption>Cómo entiende la industria el DevSecOps</caption>
                                     <thead>
                                       <tr>
-                                        <th scope="col" style="text-align:left;padding:8px 10px;border-bottom:2px solid #ddd;">Aspecto</th>
-                                        <th scope="col" style="text-align:left;padding:8px 10px;border-bottom:2px solid #ddd;">Idea principal</th>
+                                        <th scope="col">Aspecto</th>
+                                        <th scope="col">Idea principal</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                       <tr>
-                                        <td style="padding:10px;border-bottom:1px solid #f0f0f0;font-weight:600;">Capacidades</td>
-                                        <td style="padding:10px;border-bottom:1px solid #f0f0f0;">La seguridad debe aplicarse de forma continua y desde etapas tempranas (shift-left).</td>
+                                        <td>Capacidades</td>
+                                        <td>La seguridad debe aplicarse de forma continua y desde etapas tempranas (shift-left).</td>
                                       </tr>
                                       <tr>
-                                        <td style="padding:10px;border-bottom:1px solid #f0f0f0;font-weight:600;">Cultura</td>
-                                        <td style="padding:10px;border-bottom:1px solid #f0f0f0;">Todos en el equipo comparten la responsabilidad de la seguridad.</td>
+                                        <td>Cultura</td>
+                                        <td>Todos en el equipo comparten la responsabilidad de la seguridad.</td>
                                       </tr>
                                       <tr>
-                                        <td style="padding:10px;font-weight:600;">Tecnología</td>
-                                        <td style="padding:10px;">Se automatizan tareas de seguridad como pruebas, escaneo y configuración.</td>
+                                        <td>Tecnología</td>
+                                        <td>Se automatizan tareas de seguridad como pruebas, escaneo y configuración.</td>
                                       </tr>
                                     </tbody>
                                   </table>
                             </div>
+                        </div>
+                        
                         <div class="article-section">
                             <h4>Conclusión</h4>
                             <p>
@@ -605,8 +127,6 @@
                                 software son significativos.
                                 <br>
                             </p>
-                        </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -632,7 +152,7 @@
                                 restricciones particulares: menor capacidad de procesamiento/memoria, ciclos de vida más largos, despliegues 
                                 menos frecuentes y una dependencia directa de hardware.
                                 <br><br>
-                                Para investigar, los autores realizan una revisión exploratoria de literatura «pasada» (empírica de trabajos previos)
+                                Para investigar, los autores realizan una revisión exploratoria de literatura "pasada" (empírica de trabajos previos)
                                 que incluyó artículos, conferencias y otros documentos que mencionan DevSecOps en entornos embebidos. 
                                 A partir de esa revisión identifican tres dimensiones clave: qué tan propagado está DevSecOps en embebidos, 
                                 cuáles son los retos específicos de dicho contexto, y qué adaptaciones o prácticas emergentes permiten 
@@ -683,7 +203,7 @@
 
             <div class="critique-points">
                 <div class="critique-card">
-                    <h4>Crítica del artículo “Preliminary Findings about DevSecOps from Grey Literature”</h4>
+                    <h4>Crítica del artículo "Preliminary Findings about DevSecOps from Grey Literature"</h4>
                     <p>
                         <br>
                         El artículo ofrece una visión clara sobre el surgimiento del DevSecOps como una evolución natural del modelo 
@@ -700,7 +220,7 @@
                 </div>
                 
                 <div class="critique-card">
-                    <h4>Crítica del artículo “DevSecOps in embedded systems: An empirical study of past literature”</h4>
+                    <h4>Crítica del artículo "DevSecOps in embedded systems: An empirical study of past literature"</h4>
                     <p>
                         <br>
                         El trabajo es valioso porque llena un hueco: muchas discusiones sobre DevSecOps se centran en aplicaciones 
@@ -717,7 +237,6 @@
                         empírico adicional para pasar de recomendaciones a soluciones probadas.
                     </p>
                 </div>
-              
             </div>
 
             <div class="highlight" style="margin-top: 30px;">
@@ -743,12 +262,12 @@
             
             <div class="author-section">
                 <div class="author-photo">
-                   <img src="https://raw.githubusercontent.com//yohananft/-devsecops-critica/main/perfil.png" alt="👩‍💻">
+                   <img src="https://raw.githubusercontent.com//yohananft/-devsecops-critica/main/perfil.png" alt="Yohana Hidalgo">
                 </div>
                 
                 <div class="author-info">
                     <h3 style="color: #a8dadc; margin-bottom: 10px;">Yohana Hidalgo Oviedo</h3>
-                    <p style="color: #e8e8e8; margin-bottom: 15px;">Estudiante de Informática Empresarial </p>
+                    <p style="color: #e8e8e8; margin-bottom: 15px;">Estudiante de Informática Empresarial</p>
                     
                     <div class="author-details">
                         <div class="detail-card">
@@ -758,7 +277,7 @@
                         </div>
                         
                         <div class="detail-card">
-                            <h4>🔐🥋🎧 Intereses </h4>
+                            <h4>🔐🥋🎧 Intereses</h4>
                             <p>
                                 En la carrera me gusta la parte de programación pura. 
                                 <br>Fuera de la Universidad, me gusta escuchar música y me apasiona el karate.
@@ -770,7 +289,7 @@
         </section>
 
         <footer class="main-footer">
-            <h5 class="subtitle">©Yohana 2025 -  DevSecOps</h5>
+            <h5 class="subtitle">©Yohana 2025 - DevSecOps</h5>
             <h5 class="subtitle">Universidad de Costa Rica | IF6100 - Análisis y Diseño de Sistemas</h5>
         </footer>
     </div>
@@ -800,9 +319,9 @@
             });
             
             window.addEventListener('scroll', fadeInOnScroll);
-            fadeInOnScroll(); // Ejecutar una vez al cargar
+            fadeInOnScroll();
             
-            
+            // Smooth scroll para los botones de navegación
             document.querySelectorAll('.nav-btn').forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
