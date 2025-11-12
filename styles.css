@@ -51,11 +51,10 @@ body::before {
     z-index: 1;
 }
 
-
 .main-header {
     text-align: center;
-    padding: 45px 0;
-    margin-bottom: 15px;
+    padding: 40px 0;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -65,7 +64,7 @@ body::before {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
+    width: 200px;
     height: 2px;
     background: linear-gradient(90deg, transparent, #a8dadc, transparent);
 }
