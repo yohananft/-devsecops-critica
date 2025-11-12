@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -523,8 +524,8 @@
                 <div class="article-card">
                     <div class="article-header">
                         <div>
-                            <h3 class="article-title">Mao et al. (2020)</h3>
-                            <p class="article-meta">QRS 2020 — IEEE · Grey literature analysis</p>
+                            <h3 class="article-title">“Preliminary Findings about DevSecOps from Grey Literature”</h3>
+                            <p class="article-meta">Mao et al. (2020)</p>
                         </div>
                         <div class="article-doi">DOI: 10.1109/QRS51102.2020.00064</div>
                     </div>
@@ -571,46 +572,47 @@
                                 La industria ve DevSecOps como una extensión de DevOps que integra la seguridad durante todo el ciclo de desarrollo. 
                                 Sus interpretaciones se agrupan en tres aspectos clave:
                             </p>
-                            <!-- Div contenedor listo para montar -->
+                            
                             <div id="devsecops" class="devsecops-container" style="max-width:900px;margin:0 auto;padding:12px;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;">
-                              <!-- Tabla accesible -->
-                              <table role="table" aria-label="Cómo entiende la industria DevSecOps" style="width:100%;border-collapse:collapse;">
-                                <caption style="text-align:left;font-weight:600;margin-bottom:8px;">Cómo entiende la industria el DevSecOps</caption>
-                                <thead>
-                                  <tr>
-                                    <th scope="col" style="text-align:left;padding:8px 10px;border-bottom:2px solid #ddd;">Aspecto</th>
-                                    <th scope="col" style="text-align:left;padding:8px 10px;border-bottom:2px solid #ddd;">Idea principal</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td style="padding:10px;border-bottom:1px solid #f0f0f0;font-weight:600;">Capacidades</td>
-                                    <td style="padding:10px;border-bottom:1px solid #f0f0f0;">La seguridad debe aplicarse de forma continua y desde etapas tempranas (shift-left).</td>
-                                  </tr>
-                                  <tr>
-                                    <td style="padding:10px;border-bottom:1px solid #f0f0f0;font-weight:600;">Cultura</td>
-                                    <td style="padding:10px;border-bottom:1px solid #f0f0f0;">Todos en el equipo comparten la responsabilidad de la seguridad.</td>
-                                  </tr>
-                                  <tr>
-                                    <td style="padding:10px;font-weight:600;">Tecnología</td>
-                                    <td style="padding:10px;">Se automatizan tareas de seguridad como pruebas, escaneo y configuración.</td>
-                                  </tr>
-                                </tbody>
-                              </table>
+                                  <table role="table" aria-label="Cómo entiende la industria DevSecOps" style="width:100%;border-collapse:collapse;">
+                                    <caption style="text-align:left;font-weight:600;margin-bottom:8px;">Cómo entiende la industria el DevSecOps</caption>
+                                    <thead>
+                                      <tr>
+                                        <th scope="col" style="text-align:left;padding:8px 10px;border-bottom:2px solid #ddd;">Aspecto</th>
+                                        <th scope="col" style="text-align:left;padding:8px 10px;border-bottom:2px solid #ddd;">Idea principal</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td style="padding:10px;border-bottom:1px solid #f0f0f0;font-weight:600;">Capacidades</td>
+                                        <td style="padding:10px;border-bottom:1px solid #f0f0f0;">La seguridad debe aplicarse de forma continua y desde etapas tempranas (shift-left).</td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding:10px;border-bottom:1px solid #f0f0f0;font-weight:600;">Cultura</td>
+                                        <td style="padding:10px;border-bottom:1px solid #f0f0f0;">Todos en el equipo comparten la responsabilidad de la seguridad.</td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding:10px;font-weight:600;">Tecnología</td>
+                                        <td style="padding:10px;">Se automatizan tareas de seguridad como pruebas, escaneo y configuración.</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
                             </div>
+                            
                             <div class="article-section">
-                            <h4>Prácticas Recomendadas</h4>
-                            <p>
-                               Las prácticas encontradas se dividen en tres grupos:
-                                <br>
-                                <br>1. Proceso: Integrar seguridad en cada fase (analizar amenazas, revisar código, pruebas automáticas).
-                                <br>
-                                <br>2. Infraestructura: Proteger el entorno (manejo de credenciales, configuración segura, escaneo de contenedores).
-                                <br>
-                                <br>3. Colaboración: Promover un equipo consciente de seguridad (Security Champions y capacitación).
-                                <br>
-                            </p>
-                        </div>
+                                <h4>Prácticas Recomendadas</h4>
+                                <p>
+                                   Las prácticas encontradas se dividen en tres grupos:
+                                    <br>
+                                    <br>1. Proceso: Integrar seguridad en cada fase (analizar amenazas, revisar código, pruebas automáticas).
+                                    <br>
+                                    <br>2. Infraestructura: Proteger el entorno (manejo de credenciales, configuración segura, escaneo de contenedores).
+                                    <br>
+                                    <br>3. Colaboración: Promover un equipo consciente de seguridad (Security Champions y capacitación).
+                                    <br>
+                                </p>
+                            </div>
                         <div class="article-section">
                             <h4>Conclusión</h4>
                             <p>
@@ -760,7 +762,7 @@
             window.addEventListener('scroll', fadeInOnScroll);
             fadeInOnScroll(); // Ejecutar una vez al cargar
             
-            // Smooth scroll para los botones de navegación
+            
             document.querySelectorAll('.nav-btn').forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
