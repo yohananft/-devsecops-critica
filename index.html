@@ -663,28 +663,41 @@
                                 Aunque el interés en DevSecOps crece, los casos específicos en sistemas embebidos son todavía 
                                 escasos. Muchos trabajos se centran más en la teoría o en contextos generales, y 
                                 no tanto en dispositivos concretos embebidos.
+                                <br>
                             </p>
-                            <h4>Retos técnicos y organizativos:</h4>
+                            <h5>Retos técnicos y organizativos:</h5>
+                            <p>
+                                Técnicos: herramientas de CI/CD, escaneo automático, contenedores, microservicios funcionan bien en 
+                                entornos de software puro, pero en embebidos se topan con barreras como firmware que no se puede 
+                                actualizar con tanta frecuencia, hardware propietario, recursos limitados, entornos de test menos 
+                                maduros.
+                                <br><br>
+                                Operacionales/culturales: la integración de seguridad requiere que los equipos de hardware, firmware 
+                                y software colaboren, lo cual no siempre ocurre. Las organizaciones que manejan embebidos suelen 
+                                tener estructuras más rígidas, menos automatización, menos cultura de “security-by-design”.
+                                <br>
+                            </p>
+                            <h5>Oportunidades y adaptaciones:</h5>
+                             <p> 
+                                Los principios de DevSecOps (como “shift-left” de seguridad, automatización de pruebas, integración 
+                                continua, infraestructura como código) siguen siendo válidos, pero necesitan adaptarse al contexto 
+                                embebido. Por ejemplo: pipelines más ligeros, pruebas de firmware antes de despliegue, mecanismos 
+                                seguros de actualización en campo, control de versiones para hardware + software, validación de 
+                                configuración de dispositivos.
+                                <br><br>
+                                Los autores también señalan que la investigación futura podría enfocarse en herramientas específicas 
+                                 para embebidos, métricas de seguridad adaptadas (por ejemplo para firmware y dispositivos físicos), 
+                                 y también en modelos de madurez para industrias que usan embebidos (automotriz, aeroespacial, IoT).
+                                <br>
+                            </p>
+                            <h5>Recomendaciones: <br>Los autores proponen que tanto investigadores como profesionales de la industria deben:</h5>
                              <p>
-                                <br><br>
-                                Técnicos: herramientas de CI/CD, escaneo automático, contenedores, microservicios funcionan bien en entornos de software puro, pero en embebidos se topan con barreras como firmware que no se puede actualizar con tanta frecuencia, hardware propietario, recursos limitados, entornos de test menos maduros.
-                                <br>
-                                Operacionales/culturales: la integración de seguridad requiere que los equipos de hardware, firmware y software colaboren, lo cual no siempre ocurre. Las organizaciones que manejan embebidos suelen tener estructuras más rígidas, menos automatización, menos cultura de “security-by-design”.
-                                <br><br>
-                                Oportunidades y adaptaciones:
-                                <br>
-                                Los principios de DevSecOps (como “shift-left” de seguridad, automatización de pruebas, integración continua, infraestructura como código) siguen siendo válidos, pero necesitan adaptarse al contexto embebido. Por ejemplo: pipelines más ligeros, pruebas de firmware antes de despliegue, mecanismos seguros de actualización en campo, control de versiones para hardware + software, validación de configuración de dispositivos.
-                                <br>
-                                Los autores también señalan que la investigación futura podría enfocarse en herramientas específicas para embebidos, métricas de seguridad adaptadas (por ejemplo para firmware y dispositivos físicos), y también en modelos de madurez para industrias que usan embebidos (automotriz, aeroespacial, IoT).
-                                <br>
-                                Recomendaciones: Los autores proponen que tanto investigadores como profesionales de la industria deben:
-                                <br>
                                 Documentar casos reales de adopción de DevSecOps en embebidos, con métricas y datos de campo.
-                                <br>
+                                <br><br>
                                 Desarrollar o adaptar herramientas de automatización que funcionen con las restricciones de hardware/firmware.
-                                <br>
+                                <br><br>
                                 Fomentar la cultura de seguridad desde el diseño del dispositivo, no solo desde el lado del software.
-                                <br>
+                                <br><br>
                                 Evaluar el impacto de la seguridad integrando hardware y software y midiendo variables como frecuencia de actualización, vulnerabilidades encontradas, tiempo de mitigación, coste de mantenimiento de dispositivos desplegados.
                             </p>
                         </div>
