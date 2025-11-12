@@ -499,18 +499,16 @@
                 <div class="student-badge">⚙️ Operaciones</div>
             </div>
             <div>
-                <p class="subtitle">IF-6100 Análisis y Diseño de Sistemas</p>
+                <h2 class="subtitle">IF-6100 Análisis y Diseño de Sistemas</h2>
             </div>
         </header>
 
-        <!-- Navigation Buttons -->
         <nav class="main-nav fade-in">
             <a href="#articulos" class="nav-btn">📄 Artículos</a>
             <a href="#critica" class="nav-btn">💭 Análisis Crítico</a>
             <a href="#autor" class="nav-btn">👤 Sobre el Autor</a>
         </nav>
 
-        <!-- Sección Artículos -->
         <section id="articulos" class="content-section fade-in">
             <h2 class="section-title">Investigación de Artículos</h2>
             <div class="section-content">
@@ -568,7 +566,7 @@
                         </div>
                         
                         <div class="article-section">
-                            <h4>Cómo Entiende la Industria el DevSecOpsl</h4>
+                            <h4>Cómo Entiende la Industria el DevSecOps</h4>
                             <p>
                                 La industria ve DevSecOps como una extensión de DevOps que integra la seguridad durante todo el ciclo de desarrollo. 
                                 Sus interpretaciones se agrupan en tres aspectos clave:
@@ -598,7 +596,6 @@
                                       </tr>
                                     </tbody>
                                   </table>
-                               <!-- </div> -->
                             </div>
                             
                             <div class="article-section">
@@ -660,8 +657,31 @@
                         </div>
                         
                         <div class="article-section">
-                            <h4>Metodología</h4>
-                            <p>Revisión Sistemática de Literatura (SLR) con planificación de preguntas de investigación, búsqueda en múltiples bases de datos académicas y selección rigurosa de estudios.</p>
+                            <h4>Hallazgos principales</h4>
+                            <p>
+                                Baja adopción concreta: Aunque el interés en DevSecOps crece, los casos específicos en sistemas embebidos son todavía escasos. Muchos trabajos se centran más en la teoría o en contextos generales, y no tanto en dispositivos concretos embebidos.
+                                <br>Retos técnicos y organizativos:
+                                <br><br>
+                                Técnicos: herramientas de CI/CD, escaneo automático, contenedores, microservicios funcionan bien en entornos de software puro, pero en embebidos se topan con barreras como firmware que no se puede actualizar con tanta frecuencia, hardware propietario, recursos limitados, entornos de test menos maduros.
+                                <br>
+                                Operacionales/culturales: la integración de seguridad requiere que los equipos de hardware, firmware y software colaboren, lo cual no siempre ocurre. Las organizaciones que manejan embebidos suelen tener estructuras más rígidas, menos automatización, menos cultura de “security-by-design”.
+                                <br>
+                                Oportunidades y adaptaciones:
+                                <br>
+                                Los principios de DevSecOps (como “shift-left” de seguridad, automatización de pruebas, integración continua, infraestructura como código) siguen siendo válidos, pero necesitan adaptarse al contexto embebido. Por ejemplo: pipelines más ligeros, pruebas de firmware antes de despliegue, mecanismos seguros de actualización en campo, control de versiones para hardware + software, validación de configuración de dispositivos.
+                                <br>
+                                Los autores también señalan que la investigación futura podría enfocarse en herramientas específicas para embebidos, métricas de seguridad adaptadas (por ejemplo para firmware y dispositivos físicos), y también en modelos de madurez para industrias que usan embebidos (automotriz, aeroespacial, IoT).
+                                <br>
+                                Recomendaciones: Los autores proponen que tanto investigadores como profesionales de la industria deben:
+                                <br>
+                                Documentar casos reales de adopción de DevSecOps en embebidos, con métricas y datos de campo.
+                                <br>
+                                Desarrollar o adaptar herramientas de automatización que funcionen con las restricciones de hardware/firmware.
+                                <br>
+                                Fomentar la cultura de seguridad desde el diseño del dispositivo, no solo desde el lado del software.
+                                <br>
+                                Evaluar el impacto de la seguridad integrando hardware y software y midiendo variables como frecuencia de actualización, vulnerabilidades encontradas, tiempo de mitigación, coste de mantenimiento de dispositivos desplegados.
+                            </p>
                         </div>
                         
                         <div class="article-section">
